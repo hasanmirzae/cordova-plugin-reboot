@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="hasanmirzae.github.cordova-plugin-reboot" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-  <name>cordova-plugin-reboot</name>
+  <name>Reboot</name>
   <js-module name="cordova-plugin-reboot" src="www/cordova-plugin-reboot.js">
-    <clobbers target="cordova.plugins.cordova-plugin-reboot" />
+    <clobbers target="Reboot" />
   </js-module>
   <platform name="android">
     <config-file parent="/*" target="res/xml/config.xml">
