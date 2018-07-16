@@ -1,0 +1,17 @@
+{
+  "name": "hasanmirzae.github.cordova-plugin-reboot",
+  "version": "1.0.0",
+  "description": "Reboot app",
+  "cordova": {
+    "id": "hasanmirzae.github.cordova-plugin-reboot",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "hasanmirzae@gmail.com",
+  "license": "ISC"
+}
