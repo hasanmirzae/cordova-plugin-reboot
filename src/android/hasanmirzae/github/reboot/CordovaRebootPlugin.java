@@ -1,5 +1,11 @@
 package hasanmirzae.github.reboot;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+
+import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
@@ -22,6 +28,15 @@ public class CordovaRebootPlugin extends CordovaPlugin {
     }
 
     private void reboot(CallbackContext callbackContext) {
-        callbackContext.success("Success");
+        Context context = cordova.getContext();
+        Intent mStartActivity = context.getPackageManager().getLaunchIntentForPackage( context.getPackageName() );
+        mStartActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        int mPendingIntentId = 123456;
+        PendingIntent mPendingIntent = PendingIntent.getActivity(context, mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager mgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
+        System.exit(0);
     }
+
+
 }
